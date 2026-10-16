@@ -1,58 +1,23 @@
-# SDN KEBOTOHAN — Website Sekolah
+# Yayasan Al-Manshur Kebotohan
 
-Website resmi SDN Kebotohan: profil sekolah, berita, kegiatan, pengumuman, galeri, dan panel admin.
+Website resmi Yayasan Al-Manshur Kebotohan. Situs statis dengan CMS berbasis `localStorage` (tanpa server).
 
-## Struktur
-
-- `index.html` — halaman utama
-- `style.css` — tampilan (tema hijau sekolah)
-- `app.js` — data, render, panel admin, backup/restore
+## Live
+https://linkqita.github.io/yayasan-al-manshur/
 
 ## Fitur
+- **Profil Yayasan** - visi, misi, identitas, pimpinan, statistik
+- **Unit Pendidikan** - 5 lembaga (PAUD KB Insan Rabbani, RA & MI Miftahul Ulum, TPQ Al-Falah, MDT Ula Riyadlotul Uqul Putri)
+- **Berita, Program & Kegiatan, Pengumuman, Galeri**
+- **Panel Admin (CMS)** - CRUD penuh + upload gambar + edit identitas + ganti sandi + backup/restore JSON
 
-**Halaman publik**
-- Berita terbaru
-- Pengumuman
-- Kegiatan sekolah
-- Galeri foto
-- Profil (visi, misi, statistik)
-- Responsif mobile
+## Panel Admin
+Tombol **Panel Admin** di header. Sandi bawaan: `admin123`.
 
-**Panel admin** (klik menu "Admin")
-- Login dengan kata sandi
-- Kelola berita, kegiatan, pengumuman, galeri: tambah / edit / hapus
-- Backup data ke file `.json`
-- Restore dari file backup
-- Reset ke data bawaan
+## Struktur
+- `index.html` - markup
+- `style.css` - tema biru-putih
+- `app.js` - data bawaan + render + CMS
 
-## Login admin
-
-Kata sandi bawaan: `admin123`
-
-Ubah lewat console browser:
-
-```js
-setAdminPassword('sandi-baru-anda')
-```
-
-## PENTING — batasan keamanan
-
-Ini situs **statis** (GitHub Pages). Tidak ada server.
-
-- Data admin tersimpan di **localStorage browser** — hanya di perangkat itu, tidak tersinkron.
-- Gerbang login hanya UI, **bukan keamanan sungguhan**. Kode dapat dibaca siapa pun lewat DevTools.
-- Jangan pernah menyimpan data rahasia (NISN, nilai, data pribadi siswa) di sini.
-
-Untuk data yang benar-benar aman dan tersinkron antar perangkat, dibutuhkan backend (mis. Firebase, Supabase, atau server sendiri).
-
-## Deploy ke GitHub Pages
-
-1. Repositori sudah di-push ke GitHub
-2. Buka Settings → Pages
-3. Source: `Deploy from a branch`
-4. Branch: `main`, folder: `/ (root)`
-5. Simpan — situs aktif di `https://<username>.github.io/<repo>/`
-
-## Menjalankan lokal
-
-Buka `index.html` langsung di browser. Tidak perlu build tool.
+## Catatan
+Situs statis: data admin tersimpan di `localStorage` browser. Tidak tersinkron antar perangkat. Gerbang login hanya UI, bukan keamanan sungguhan. Backup/restore lewat JSON di tab Pengaturan.
